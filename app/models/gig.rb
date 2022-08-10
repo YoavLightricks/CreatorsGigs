@@ -24,13 +24,11 @@ class Gig < ApplicationRecord
     event :paid do
       transitions from: :completed, to: :paid
     end
-
   end
 
 
   def do_it
     GigPayment.create(gig_id: self.id)
   end
-
 
 end

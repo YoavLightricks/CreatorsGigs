@@ -3,6 +3,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.9'
 gem 'active_model_serializers', '~> 0.10.0'
+gem 'dotenv-rails', groups: [:development, :test]
+
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.0.5', '>= 6.0.5.1'
@@ -45,3 +48,10 @@ gem 'aasm'
 gem 'after_commit_everywhere', '~> 1.0'
 
 gem 'whenever', require: false
+# Run against this stable release
+gem 'rspec', '~> 3.11'
+gem 'rspec-rails', '~> 5.1', '>= 5.1.2'
+group :test do
+  gem 'factory_bot_rails'
+  gem 'faker'
+end
